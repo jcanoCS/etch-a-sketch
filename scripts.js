@@ -11,7 +11,7 @@ function generateRow(numColumns) {
     // loop to create and add multiple squares to the row
     for(let i = 0; i < numColumns; i++) {
         // create square button
-        const square = document.createElement('button');
+        const square = document.createElement('div');
         // adding square class to the square button
         square.classList.add('square');
 
