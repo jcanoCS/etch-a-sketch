@@ -12,22 +12,25 @@ function generateRow(numColumns) {
     for(let i = 0; i < numColumns; i++) {
         // create square button
         const square = document.createElement('button');
-        // Add hover event listener
+        // adding square class to the square button
+        square.classList.add('square');
+
+        // Hover event listener
         square.addEventListener('mouseover', () => {
-        // Change the button's background color
-        square.style.backgroundColor = '#00FF7F';
+            // Adding hover class to square
+            square.classList.add('hover');
         });
   
         // Reverse hover effect
         square.addEventListener('mouseout', () => {
-            // Change the button's background color back to its original color
-            square.style.backgroundColor = '';
+            // Remove hover class to remove hover color
+            square.classList.remove('hover');
         });
         
-        square.classList.add('square');
+        // add the finalized square to the row
         row.appendChild(square);
     }
-
+    
     return row;
 }
 
