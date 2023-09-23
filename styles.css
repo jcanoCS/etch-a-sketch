@@ -1,0 +1,25 @@
+body {
+    background-color: gainsboro;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.square {
+    height: 36px;
+    width: 36px;
+    background-color: black;
+    margin: 1px;
+}
