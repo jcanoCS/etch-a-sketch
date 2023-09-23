@@ -19,18 +19,11 @@ function generateRow(numColumns) {
         square.addEventListener('mouseover', () => {
             // Adding hover class to square
             square.classList.add('hover');
-        });
-  
-        // Reverse hover effect
-        square.addEventListener('mouseout', () => {
-            // Remove hover class to remove hover color
-            square.classList.remove('hover');
-        });
-        
+        });    
         // add the finalized square to the row
         row.appendChild(square);
     }
-    
+
     return row;
 }
 
