@@ -10,7 +10,20 @@ function generateRow(numColumns) {
 
     // loop to create and add multiple squares to the row
     for(let i = 0; i < numColumns; i++) {
-        const square = document.createElement('div');
+        // create square button
+        const square = document.createElement('button');
+        // Add hover event listener
+        square.addEventListener('mouseover', () => {
+        // Change the button's background color
+        square.style.backgroundColor = '#00FF7F';
+        });
+  
+        // Reverse hover effect
+        square.addEventListener('mouseout', () => {
+            // Change the button's background color back to its original color
+            square.style.backgroundColor = '';
+        });
+        
         square.classList.add('square');
         row.appendChild(square);
     }
