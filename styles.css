@@ -1,8 +1,25 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     background-color: gainsboro;
-    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.top > #dimm-btn {
+    background-color: #70d1a1;
+
 }
 
 .grid {
@@ -25,6 +42,5 @@ body {
 }
 
 .hover {
-    /* background-color: #00FF7F; */
     background-color: black;
 }
