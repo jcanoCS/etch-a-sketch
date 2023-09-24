@@ -1,5 +1,5 @@
 // ********************** LOCAL VARIABLES ***********************************
-const DIMMENSION = 16;
+
 
 
 // ********************* HELPER FUNCTIONS **********************************
@@ -34,7 +34,7 @@ function generateGrid(numRows) {
     
     // loop to create and add multiple rows to the grid
     for(let i = 0; i < numRows; i++) {
-        const row = generateRow(DIMMENSION);
+        const row = generateRow(numRows);
         grid.appendChild(row);
     }
 
@@ -44,6 +44,13 @@ function generateGrid(numRows) {
 
 
 
-// adding a grid to the body of the html file
-const newGrid = generateGrid(DIMMENSION);
-document.body.appendChild(newGrid);
+const dimmensionButton = document.getElementById('dimm-btn');
+// Generate button event listener for user input (grid dimmensions)
+dimmensionButton.addEventListener('click', () => {
+    // Prompting user for size of the grid
+    let dimmension = prompt("Enter The Grid Dimmension (1-100): ");
+    // creating grid with user's dimmension input
+    const newGrid = generateGrid(dimmension);
+    // adding the grid to the DOM
+    document.body.appendChild(newGrid);
+});
