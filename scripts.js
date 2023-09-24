@@ -1,5 +1,7 @@
 // ********************** LOCAL VARIABLES ***********************************
 const GRID_ID = "current-grid"
+const MIN_DIMMENSION = 1;
+const MAX_DIMMENSION = 100;
 
 
 // ********************* HELPER FUNCTIONS **********************************
@@ -50,6 +52,22 @@ function removeCurrentGrid(gridID) {
         currentGrid = null;
     }
 }
+
+function getValidDimmensionInput() {
+    let dimmension;
+    
+    do {
+        // prompt user
+        dimmension = prompt("Enter The Grid's Desired Dimmension (1-100): ");
+        // convert to integer if possible (base-10, normal numbers)
+        dimmension = parseInt(dimmension, 10);
+        // boolean variable to determine if the input was an integer
+        inputIsInt = Number.isInteger(dimmension);
+    } while( !inputIsInt || (dimmension < MIN_DIMMENSION) || (dimmension > MAX_DIMMENSION) );
+
+    // return the validized dimmension
+    return dimmension;
+}
 // *************************************************************************
 
 
@@ -62,7 +80,7 @@ dimmensionButton.addEventListener('click', () => {
     // If a current grid exists, remove it
     removeCurrentGrid(GRID_ID);
     // Prompting user for size of the grid
-    let dimmension = prompt("Enter The Grid Dimmension (1-100): ");
+    let dimmension = getValidDimmensionInput();
     // creating grid with user's dimmension input
     let newGrid = generateGrid(dimmension);
     // adding id idnetifier to the new grid
